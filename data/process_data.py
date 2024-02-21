@@ -45,13 +45,27 @@ def clean_data(messages, categories):
     # Merge message and category dataframes
     df = pd.merge(messages, categories, on='id')
 
-    # Remove observations with values "2" in category columns
-    for column in categories.columns:
-        df = df[df[column] != 2]
+    # Split categories into separate category columns
+    categories = df['categories'].str.split(';', expand=True)
 
-    # Your other cleaning operations here
+    # Rename the columns of 'categories'
+    row = categories.iloc[0]
+    category_colnames = row.apply(lambda x: x[:-2])
+    categories.columns = category_colnames
+
+    # Convert category values to numeric (0 or 1)
+    for column in categories:
+        categories[column] = categories[column].astype(str).str[-1].astype(int)
+
+    # Replace categories column in df with new category columns
+    df = df.drop(columns=['categories'])
+    df = pd.concat([df, categories], axis=1)
+
+    # Remove duplicates
+    df = df.drop_duplicates()
 
     return df
+
 
 
 def save_data(df, database_filename):

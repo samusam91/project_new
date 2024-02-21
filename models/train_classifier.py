@@ -107,6 +107,10 @@ def evaluate_model(model, X_test, Y_test, category_names):
         print(col)
         print(classification_report(Y_test[col], Y_pred[:, i]))
 
+    # Output overall performance metrics for the model
+    print("\nOverall Performance Metrics:")
+    print(classification_report(Y_test, Y_pred, target_names=category_names))
+
 
 def save_model(model, model_filepath):
     """

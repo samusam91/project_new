@@ -1,12 +1,40 @@
 # Disaster Response Pipeline Project
 
-This project implements an end-to-end pipeline for analyzing and classifying disaster-related messages. It includes two main components: an ETL pipeline for data preprocessing and a machine learning pipeline for training a multi-label classification model.
+This project implements an end-to-end pipeline for analyzing and classifying disaster-related messages. 
+It includes two main components: an ETL pipeline for data preprocessing and a machine learning pipeline for training a multi-label classification model.
+
+# Importance and Impact:
+In times of disaster, effective communication is critical for coordinating response efforts and providing assistance to those in need. 
+However, the overwhelming volume of messages generated during such events can make it challenging for responders to prioritize and address urgent requests.
+
+The Disaster Response Pipeline Project aims to alleviate this challenge by providing a robust system for automatically categorizing and prioritizing incoming messages based on their relevance and urgency.
+By quickly identifying messages pertaining to specific needs such as medical assistance, food supplies, or shelter, responders can streamline their efforts and allocate resources more efficiently.
+
+# Practical Benefits:
+Faster Response Times: With the automated classification system, responders can swiftly identify critical messages, leading to faster response times and potentially saving lives.
+Resource Allocation: By accurately categorizing messages, the system helps organizations allocate resources where they are most needed, optimizing the use of limited resources during a crisis.
+Improved Coordination: The centralized platform fosters better coordination among different response teams and organizations, ensuring a more cohesive and effective disaster response effort.
+Enhanced Situational Awareness: By analyzing trends and patterns in incoming messages, the system provides valuable insights into the evolving needs and priorities of affected communities, enabling responders to adapt their strategies accordingly.
+
+# Project structure:
+- Project_new
+    - app
+        - templates
+            - go.html
+            - master.html
+        - data
+            - disaster_categories.csv
+            - disaster_messages.csv
+            - process_data.py
+        - models
+            - train_classifier.py
+    - run.py
+    - disaster_response.db
 
 # Instructions:
+Remember to install all the requirements with pip install.
 
-remember to install all the requirements with pip install
-
-## Commands or Instructions to Run the Project
+## Commands to Run the Project
 
 ### 1. ETL Pipeline - Data Cleaning and Database Setup
 
@@ -47,4 +75,5 @@ Files Description:
 Acknowledgement:
 This project was created as part of a learning project and is available on GitHub for reference and collaboration.
 
-## Link to Git : https://github.com/samusam91/project_new
+## Link to Git: 
+Disaster Response Pipeline Project on GitHub: https://github.com/samusam91/project_new
